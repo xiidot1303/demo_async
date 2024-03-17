@@ -22,14 +22,18 @@ from django.views.decorators.cache import never_cache
 
 @never_cache
 async def demo(request):
+    await Test.objects.acreate(title = "lalall")
     # start = datetime.now().strftime("%H:%M:%S")
-    await asyncio.sleep(4)
+    # await asyncio.sleep(4)
     # await asyncio.sleep(5)
     # end = datetime.now().strftime("%H:%M:%S:%f")
     # return HttpResponse(f'{start} - {end}')
     return HttpResponse('OK')
 
-
+def check_db(request):
+    count = Test.objects.count()
+    Test.objects.all().delete()
+    return HttpResponse(count)    
 
 # loop = asyncio.new_event_loop()
 # asyncio.set_event_loop(loop)

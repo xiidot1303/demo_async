@@ -11,4 +11,5 @@ urlpatterns = [
     # bot
     path('run-bot/<str:bot_token>', botwebhook.bot_webhook),
     path('demo', botwebhook.demo),
+    path('check', botwebhook.check_db),
 ]
