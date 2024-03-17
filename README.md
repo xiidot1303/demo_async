@@ -3,3 +3,4 @@ gunicorn --worker-class=gevent  --bind=127.0.0.1:8000 core.wsgi:application
 
 Edit your PostgreSQL configuration file (postgresql.conf) and locate the max_connections setting.
 
+ab -n 10000 -c 10000 http://127.0.0.1:8000/demo

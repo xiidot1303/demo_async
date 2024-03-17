@@ -23,7 +23,7 @@ from django.views.decorators.cache import never_cache
 @never_cache
 async def demo(request):
     # start = datetime.now().strftime("%H:%M:%S")
-    # await asyncio.sleep(4)
+    await asyncio.sleep(4)
     # await asyncio.sleep(5)
     # end = datetime.now().strftime("%H:%M:%S:%f")
     # return HttpResponse(f'{start} - {end}')
